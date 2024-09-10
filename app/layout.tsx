@@ -38,22 +38,6 @@ export default function RootLayout({
           "font-sans bg-background text-foreground scrollbar-gutter-stable"
         )}
       >
-        {/* <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-            <div className="h-full max-w-7xl w-full flex flex-col min-h-screen">
-              <Header />
-              <Nav />
-              <main className="flex-1 flex justify-center items-center px-4 py-8">
-                <div className="max-w-7xl w-full">{children}</div>
-              </main>
-            </div>
-          </div>
-        </ThemeProvider> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -61,8 +45,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative flex flex-col mx-auto min-h-screen h-full max-w-7xl">
-            <Header />
-            <Nav />
+              <Header />
+              <Nav />
             <div className="sm:px-10 px-5">
               <main className="flex-grow container mx-auto px-4 py-8">
                 {children}

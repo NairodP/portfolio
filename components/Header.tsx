@@ -36,6 +36,8 @@
 "use client";
 
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { ToggleTheme } from "./ToggleTheme";
 import { Separator } from "@/components/ui/separator";
@@ -43,12 +45,20 @@ import { motion } from "framer-motion";
 import portfolioHomeIcon from "@/public/portfolio-home-icon.jpg";
 
 export default function Header() {
+
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const backgroundClass = isHomePage
+    ? "bg-transparent"
+    : "bg-background/50 backdrop-blur-sm dark:md:bg-transparent dark:lg:bg-transparent";
+
   return (
     <motion.header 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 bg-background/50 backdrop-blur-sm px-5"
+      className={cn("sticky top-0 z-50 px-5", backgroundClass)}
+
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">

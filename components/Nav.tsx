@@ -26,13 +26,13 @@ const NavLink = ({ href, children, onClick }: NavLinkProps) => {
       onClick={onClick}
       className={cn(
         "transition-colors duration-300 relative",
-        isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+        isActive ? "text-muted-foreground" : "text-primary hover:text-muted-foreground"
       )}
     >
       {children}
       {isActive && (
         <motion.span
-          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-muted-foreground"
           layoutId="underline"
           initial={false}
         />
@@ -74,14 +74,20 @@ export default function Nav() {
   const navControls = useAnimation();
   const separatorControls = useAnimation();
 
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const backgroundClass = isHomePage
+    ? "bg-transparent"
+    : "bg-background/50 backdrop-blur-sm dark:md:bg-transparent dark:lg:bg-gradient-to-b from-slate-100/10 to-slate-100/20 rounded-lg";
+
   useEffect(() => {
     if (scrollDirection === "down") {
       navControls.start({ y: "-100%", opacity: 0 });
-      separatorControls.start({ scaleX: 0, transition: { duration: 0.2 }});
+      separatorControls.start({ scaleX: 0, transition: { duration: 0.2 } });
     } else {
       navControls.start({ y: 0, opacity: 1 });
       separatorControls.start({
-        scaleX: 0.9,
+        scaleX: 0.85,
         transition: { duration: 0.8, delay: 0.6 },
       });
     }
@@ -99,7 +105,7 @@ export default function Nav() {
         initial={{ y: -10, opacity: 0 }}
         animate={navControls}
         transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-        className="sticky top-16 md:top-20 z-40 bg-background/50 backdrop-blur-sm"
+        className={cn("sticky top-16 md:top-20 z-40", backgroundClass)}
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center h-12 md:h-16">
@@ -134,16 +140,15 @@ export default function Nav() {
             </div>
           </div>
         </div>
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={separatorControls}
-        className="my-2"
-        style={{ transformOrigin: 'center' }}
-      >
-        <Separator />
-      </motion.div>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={separatorControls}
+          className="my-2"
+          style={{ transformOrigin: "center" }}
+        >
+          <Separator />
+        </motion.div>
       </motion.nav>
-
     </>
   );
 }
