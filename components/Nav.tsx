@@ -78,7 +78,7 @@ export default function Nav() {
   const isHomePage = pathname === "/";
   const backgroundClass = isHomePage
     ? "bg-transparent"
-    : "bg-background/50 backdrop-blur-sm dark:md:bg-transparent dark:lg:bg-gradient-to-b from-slate-100/10 to-slate-100/20 rounded-lg";
+    : "bg-background/50 backdrop-blur-sm dark:md:bg-gradient-to-t from-secondary/50 to-secondary/90 rounded-lg dark:lg:bg-gradient-to-t from-secondary/50 to-secondary/90 rounded-md";
 
   useEffect(() => {
     if (scrollDirection === "down") {

@@ -55,9 +55,13 @@ const config = {
       padding: {
         "0.25": "1px",
       },
+      screens: {
+        xlMinus: "1145px",
+      },
       colors: {
         lightRed: "#b39e9e",
         border: "hsl(var(--border))",
+        borderLight: "#F2F2F2",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

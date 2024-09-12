@@ -64,3 +64,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .bg-header-double-gradient {
+    background: linear-gradient(
+      to left,
+      transparent 10%,
+      rgba(242, 242, 242, 0.1) 25%,
+      rgba(242, 242, 242, 0.2) 50%,
+      rgba(242, 242, 242, 0.1) 75%,
+      transparent 90%
+    );
+  }
+}

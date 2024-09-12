@@ -50,7 +50,9 @@ export default function Header() {
   const isHomePage = pathname === "/";
   const backgroundClass = isHomePage
     ? "bg-transparent"
-    : "bg-background/50 backdrop-blur-sm dark:md:bg-transparent dark:lg:bg-transparent";
+    : "bg-background/50 backdrop-blur-sm dark:md:bg-transparent dark:lg:bg-header-double-gradient";
+    
+    // : "bg-background/50 backdrop-blur-sm dark:md:bg-transparent dark:lg:bg-transparent";
 
   return (
     <motion.header 
