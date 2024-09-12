@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     title: "App Météo",
     description:
-      "Appel API pour afficher la météo partout en France. Cette application utilise l'API OpenWeatherMap pour fournir des informations météorologiques précises et à jour. Elle offre une interface utilisateur simple et responsive, permettant aux utilisateurs de rechercher facilement la météo de n'importe quelle ville en France grace notamment à une barre de recherche intelligente.",
+      "Appel API pour afficher la météo partout en France. Cette application utilise l'API OpenWeatherMap pour fournir des informations météorologiques précises et à jour. Elle offre une interface utilisateur simple et responsive, permettant aux utilisateurs de rechercher facilement la météo de n'importe quelle ville en France grâce notamment à une barre de recherche intelligente.",
     image: imageMeteoApp,
     link: "https://meteo-app-do.vercel.app",
     isHosted: true,
@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     title: "Bibliothèque Modal",
     description:
-      "Le but de ce projet était de convertir une bibliothèque JQuery de composant Modal en une bibliothèque React, avec TypeScript, pour ensuite la publier sur NPM. Cela permet de l'utiliser dans d'autres projets notamment pour le projet 'Enregistrement RH' que vous pouvez voir à la suite de celui ci.",
+      "Le but de ce projet était de convertir une bibliothèque JQuery de composant Modal en une bibliothèque React, avec TypeScript, pour ensuite la publier sur NPM. Cela permet de l'utiliser dans d'autres projets, notamment pour le projet 'Enregistrement RH' que vous pouvez voir à la suite de celui-ci.",
     image: imageBibliModal,
     link: "https://modal-library-documentation.vercel.app",
     isHosted: true,
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     title: "Petits Plats - recherches de recettes",
     description:
-      "Dans cette très simple application réalisée uniquement en Javascript, l'objectif était de pouvoir rechercher une recette dans une base de données (ici en local dans un fichier data) et de pouvoir afficher les informations de la recette. La recherche est possible via la barre de recherche proposant des suggestions, mais également grâce à 3 menus déroulants permettant un filtrage des données.",
+      "Dans cette très simple application réalisée uniquement en JavaScript, l'objectif était de pouvoir rechercher une recette dans une base de données (ici en local dans un fichier data) et de pouvoir afficher les informations de la recette. La recherche est possible via la barre de recherche proposant des suggestions, mais également grâce à 3 menus déroulants permettant un filtrage des données.",
     image: imagePetitsPlats,
     link: "",
     isHosted: false,
