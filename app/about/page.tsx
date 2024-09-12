@@ -24,12 +24,11 @@ export default function About() {
           </p>
           <div className="space-y-4">
             <p className="text-sm md:text-base">
-              Je viens de terminer mes études en développement web React et
-              j&apos;ai appris Next.js en autodidacte. Ma passion réside dans la
+              J&apos;ai terminé mes études en développement web spécialité React et ai appris Next.js en autodidacte. Ma passion réside dans la
               création d&apos;interfaces utilisateur belles et fonctionnelles.
             </p>
             <p className="text-sm md:text-base">
-              Avec un vif intérêt pour le design et le développement UI, je suis
+              Avec un vif intérêt pour les nouvelles technologies, l&apos;Intelligence Artificielle et le développement UI, je suis
               toujours enthousiaste à l&apos;idée de relever de nouveaux défis
               et de contribuer à des projets innovants.
             </p>

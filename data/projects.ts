@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description:
       "Création de formulaire d'authentification multi champs avec gestion des différentes types d'erreurs. Utilisation du package Modal depuis NPM, créé dans le projet 'Bibliothèque Modal' pour afficher un message de succès d'enrgistrement. Une page comprennant un tableau récapituatif des utilisateurs enregistrés est ensuite proposée avec un système de recherche.",
     image: imageEnregRh,
-    link: "https://meteo-app-do.vercel.app",
+    link: "https://enregistrement-rh.vercel.app",
     isHosted: true,
   },
   {

@@ -56,7 +56,7 @@ export default function HomePage() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-xs sm:text-sm text-muted-foreground mt-8"
         >
-          <p className="mb-2 text-center">Réalisé avec passion en utilisant :</p>
+          <p className="mb-2 text-center">Créé avec les technologies suivantes :</p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
             {techWords.map((tech, index) => (
               <motion.span
