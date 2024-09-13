@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 type SkillsSectionProps = {
   isLargeScreen: boolean;
-  tabAndBehindScreen: boolean;
+  tabAndBehindScreen?: boolean;
 };
 
 const SkillsSection: ForwardRefRenderFunction<HTMLDivElement, SkillsSectionProps> = (
