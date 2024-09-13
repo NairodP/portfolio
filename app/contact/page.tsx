@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 import CopyButton from "@/components/CopyButton";
 import BackHomeButton from "@/components/ui/BackHomeButton";
 import { motion } from "framer-motion";
@@ -49,21 +49,39 @@ export default function Contact() {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-lg transition-shadow duration-300">
-            <CardContent className="p-3 sm:p-4 md:p-6">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-4">
-                <Linkedin className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
-                <a
-                  href="https://www.linkedin.com/in/dorian-pernot-513173185"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs sm:text-sm md:text-base font-medium hover:underline hover:text-primary"
-                >
-                  LinkedIn/Dorian
-                </a>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+            <a
+              href="https://www.linkedin.com/in/dorian-pernot-513173185"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs sm:text-sm md:text-base font-medium hover:underline hover:text-primary"
+            >
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-3 sm:p-4 md:p-6 ">
+                  <div className="flex items-center justify-center space-x-2 sm:space-x-4 ">
+                    <Linkedin className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
+                    <span>LinkedIn/Dorian</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+
+            <a
+              href="https://github.com/NairodP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs sm:text-sm md:text-base font-medium hover:underline hover:text-primary"
+            >
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-3 sm:p-4 md:p-6 ">
+                  <div className="flex items-center justify-center space-x-2 sm:space-x-4 ">
+                    <Github className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
+                    <span>GitHub/NairodP</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
         </motion.div>
 
         <div className="mt-6 sm:mt-8 md:mt-12 flex justify-center">
