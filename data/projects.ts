@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     title: "SportApp - App de données sportives",
     description:
-      "Ici l'objectif était de créer un tableau d'analytics avec des données sportives, mockées (déjà disponibles en local) ou via un appel API. Le code permet les deux. À partir de ces données, des graphiques explicites sont implémentés pour permettre un suivi. Les graphiques sont réalisés avec la bibliothèque Recharts.",
+      "Ici l'objectif était de créer un tableau d'analytics avec des données sportives, mockées (déjà disponibles en local) ou via un appel API. Le code permet les deux. À partir de ces données, des graphiques explicites sont implémentés pour permettre un suivi. Les graphiques sont réalisés avec la bibliothèque Recharts. (Application non responsive, disponible uniquement sur tablette et ordinateur).",
     image: imageAppSport,
     link: "https://sport-data-interface.vercel.app/profil",
     isHosted: true,
