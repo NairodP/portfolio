@@ -9,15 +9,16 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import ContactMe from "@/components/ContactMe";
 import DownloadCV from "@/components/DownloadCV";
+import SkillsSection from "@/components/SkillsSection";
+import { useWindowSize } from "@/hooks/useWindowsSize";
 
 export default function About() {
-  const softSkills = ["Travail d'équipe", "Adaptabilité", "Créativité"];
-
-  const hobbies = ["Escalade", "Randonnée", "Bivouac"];
-
-  const competences = ["Intelligence Artificielle", "Git", "Méthode Agile"];
-
   const softSkillsRef = useRef<HTMLDivElement>(null);
+  const { width } = useWindowSize();
+
+  const isLargeScreen = width ? width >= 1024 || width == 1024 : false;
+  const tabAndBehindScreen = width ? width >= 768 || width == 768 : false;
+  const cursorClasses = isLargeScreen ? "cursor-auto" : "cursor-pointer";
 
   const scrollToSoftSkills = () => {
     softSkillsRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -26,11 +27,12 @@ export default function About() {
   const ClickableSoftSkill = ({ children }: { children: React.ReactNode }) => (
     <button
       onClick={scrollToSoftSkills}
-      className="inline-flex items-center px-0.5 py-0.5 rounded-sm font-medium bg-secondary/30 text-primary-800 hover:bg-primary-200 transition-colors duration-200"
+      className={`inline-flex items-center px-0.5 py-0.5 rounded-sm font-medium bg-secondary/30 text-primary-800 hover:bg-primary-200 transition-colors duration-200 ${cursorClasses}`}
     >
       {children}
     </button>
   );
+
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -59,7 +61,9 @@ export default function About() {
               Animé par une <ClickableSoftSkill>curiosité</ClickableSoftSkill>{" "}
               insatiable pour les technologies émergentes, je porte un intérêt
               particulier à l&apos;
-              <ClickableSoftSkill>intelligence artificielle</ClickableSoftSkill>{" "}
+              <ClickableSoftSkill>
+                intelligence artificielle
+              </ClickableSoftSkill>{" "}
               et au développement UI innovant. Je m&apos;adapte aux besoins en
               utilisant la{" "}
               <ClickableSoftSkill>méthode agile</ClickableSoftSkill> pour mener
@@ -69,7 +73,8 @@ export default function About() {
               fiables et bien structurées.
             </p>
           </div>
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+          {!isLargeScreen && <SkillsSection isLargeScreen={isLargeScreen} tabAndBehindScreen={tabAndBehindScreen} ref={softSkillsRef} />}
+          <div className="pt-3 grid gap-4 grid-cols-1 sm:grid-cols-2">
             <ContactMe />
 
             <DownloadCV />
@@ -108,77 +113,8 @@ export default function About() {
               />
             </div>
           </div>
-          <motion.div
-            className="mt-12 space-y-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="grid grid-cols-1 gap-x-2 gap-y-8">
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-muted-foreground flex justify-center">
-                  Compétences
-                </h3>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {competences.map((competence, index) => (
-                    <motion.span
-                      key={competence}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      className="text-sm px-2 py-1 bg-secondary/30 text-secondary-foreground rounded-md cursor-default
-                             transition-colors duration-200 ease-in-out
-                             hover:bg-secondary/50 hover:text-secondary-foreground/90"
-                    >
-                      {competence}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
 
-              <div ref={softSkillsRef}>
-                <h3 className="text-lg font-semibold mb-3 text-muted-foreground flex justify-center">
-                  Soft Skills
-                </h3>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {softSkills.map((skill, index) => (
-                    <motion.span
-                      key={skill}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      className="text-sm px-2 py-1 bg-secondary/30 text-secondary-foreground rounded-md cursor-default
-                             transition-colors duration-200 ease-in-out
-                             hover:bg-secondary/50 hover:text-secondary-foreground/90"
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-
-              {/* <div>
-                <h3 className="text-lg font-semibold mb-3 text-muted-foreground flex justify-center">
-                  Hobbies
-                </h3>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {hobbies.map((hobby, index) => (
-                    <motion.span
-                      key={hobby}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                      className="text-sm px-2 py-1 bg-secondary/30 text-secondary-foreground rounded-md cursor-default
-                             transition-colors duration-200 ease-in-out
-                             hover:bg-secondary/50 hover:text-secondary-foreground/90"
-                    >
-                      {hobby}
-                    </motion.span>
-                  ))}
-                </div>
-              </div> */}
-            </div>
-          </motion.div>
+          {isLargeScreen && <SkillsSection isLargeScreen={isLargeScreen} ref={softSkillsRef} />}
         </motion.div>
       </div>
     </div>
