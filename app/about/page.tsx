@@ -53,7 +53,7 @@ export default function About() {
               j&apos;ai approfondi mes compétences en Next.js de manière
               autodidacte. Ma passion réside dans la création d&apos;interfaces
               utilisateur à la fois esthétiques et fonctionnelles pour une
-              expérience utilisateur intuitive.
+              expérience de navigation intuitive.
             </p>
             <p className="text-sm md:text-base text-justify hyphens-auto">
               Animé par une <ClickableSoftSkill>curiosité</ClickableSoftSkill>{" "}
