@@ -4,7 +4,8 @@ export type Project = {
   title: string;
   description: string;
   image: StaticImageData;
+  carouselImages?: StaticImageData[];
   link: string;
   isHosted: boolean;
-  carouselImages?: StaticImageData[];
+  isResponsive : boolean,
 }

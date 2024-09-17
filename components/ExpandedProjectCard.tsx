@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link as LinkIcon, X } from "lucide-react";
@@ -10,6 +11,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useWindowSize } from "@/hooks/useWindowsSize";
+import { useToast } from "@/hooks/use-toast";
 
 type ExpandedProjectCardProps = {
   project: Project;
@@ -20,6 +23,26 @@ export default function ExpandedProjectCard({
   project,
   onClose,
 }: ExpandedProjectCardProps) {
+  const { width } = useWindowSize();
+  const { toast } = useToast();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(width ? width < 768 : false);
+  }, [width]);
+
+  const handleProjectClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!project.isResponsive && isMobile) {
+      e.preventDefault();
+      toast({
+        variant: "destructive",
+        title: "Site non disponible en version mobile",
+        description: "Ce projet n'est pas optimisé pour les appareils mobiles.",
+        duration: 3000,
+      });
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,7 +69,10 @@ export default function ExpandedProjectCard({
             <CarouselContent>
               {project.carouselImages.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="relative w-full" style={{ height: "calc(100vh - 300px)" }}>
+                  <div
+                    className="relative w-full"
+                    style={{ height: "calc(100vh - 300px)" }}
+                  >
                     <Image
                       src={image}
                       alt={`${project.title} - Image ${index + 1}`}
@@ -72,6 +98,7 @@ export default function ExpandedProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2"
+              onClick={handleProjectClick}
             >
               <span>Voir le projet</span>
               <LinkIcon className="h-4 w-4" />

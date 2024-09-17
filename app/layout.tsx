@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
+import { Toaster } from "@/components/ui/toaster";
 
 const josefinSans = Josefin_Sans({
   subsets: ["latin"],
@@ -45,12 +46,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative flex flex-col mx-auto min-h-screen h-full max-w-7xl">
-              <Header />
-              <Nav />
+            <Header />
+            <Nav />
             <div className="sm:px-10 px-5">
               <main className="flex-grow container mx-auto px-4 py-8">
                 {children}
               </main>
+              <Toaster />
             </div>
           </div>
         </ThemeProvider>

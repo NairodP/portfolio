@@ -36,8 +36,8 @@ export default function ProjectCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card 
-        className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col cursor-pointer" 
+      <Card
+        className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col cursor-pointer"
         onClick={handleExpand}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -47,10 +47,10 @@ export default function ProjectCard({
             <Image
               src={project.image}
               alt={project.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
-              className="transition-transform duration-300 group-hover:scale-110"
+              className="object-cover transition-transform duration-300 group-hover:scale-110"
             />
           </div>
         </CardHeader>
@@ -59,19 +59,19 @@ export default function ProjectCard({
             {project.title}
           </CardTitle>
           <div className="mb-2 flex-grow">
-            <p 
+            <p
               className="text-sm text-muted-foreground text-justify hyphens-auto overflow-hidden"
               style={{
-                display: '-webkit-box',
+                display: "-webkit-box",
                 WebkitLineClamp: 3,
-                WebkitBoxOrient: 'vertical',
-                textOverflow: 'ellipsis',
+                WebkitBoxOrient: "vertical",
+                textOverflow: "ellipsis",
               }}
             >
               {project.description}
             </p>
           </div>
-          <motion.div 
+          <motion.div
             className="flex items-center text-sm text-blue-500 mt-auto"
             initial={{ x: 0 }}
             animate={{ x: isHovered ? 5 : 0 }}

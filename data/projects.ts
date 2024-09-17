@@ -18,6 +18,7 @@ export const projects: Project[] = [
     image: imageMeteoApp,
     link: "https://meteo-app-do.vercel.app",
     isHosted: true,
+    isResponsive : true,
   },
   {
     title: "Bibliothèque Modal",
@@ -26,14 +27,16 @@ export const projects: Project[] = [
     image: imageBibliModal,
     link: "https://modal-library-documentation.vercel.app",
     isHosted: true,
+    isResponsive : true,
   },
   {
     title: "Enregistrement RH",
     description:
-      "Création de formulaire d'authentification multi champs avec gestion des différentes types d'erreurs. Utilisation du package Modal depuis NPM, créé dans le projet 'Bibliothèque Modal' pour afficher un message de succès d'enrgistrement. Une page comprennant un tableau récapituatif des utilisateurs enregistrés est ensuite proposée avec un système de recherche.",
+      "Création de formulaire d'authentification multi champs avec gestion des différentes types d'erreurs. Utilisation du package Modal depuis NPM, créé dans le projet 'Bibliothèque Modal', pour afficher un message de succès d'enrgistrement. Une page comprennant un tableau récapituatif des utilisateurs enregistrés est ensuite proposée avec un système de recherche.",
     image: imageEnregRh,
     link: "https://enregistrement-rh.vercel.app",
     isHosted: true,
+    isResponsive : true,
   },
   {
     title: "SportApp - App de données sportives",
@@ -42,6 +45,7 @@ export const projects: Project[] = [
     image: imageAppSport,
     link: "https://sport-data-interface.vercel.app/profil",
     isHosted: true,
+    isResponsive : false,
   },
   {
     title: "Petits Plats - recherches de recettes",
@@ -57,5 +61,6 @@ export const projects: Project[] = [
       petitsPlatsImageCarousel4,
       petitsPlatsImageCarousel5,
     ],
+    isResponsive : true,
   },
 ];
