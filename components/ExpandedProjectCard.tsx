@@ -88,7 +88,7 @@ export default function ExpandedProjectCard({
             <CarouselNext className="absolute right-2 top-1/2 transform -translate-y-1/2" />
           </Carousel>
         )}
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
+        <p className="text-gray-600 dark:text-gray-300 mb-4 text-justify hyphens-auto">
           {project.description}
         </p>
         {project.isHosted && project.link && (
