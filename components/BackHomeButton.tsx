@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function BackHomeButton() {
   return (
     <motion.div
-      className="mt-16 flex justify-center"
+      className="mt-6 flex justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}

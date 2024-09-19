@@ -60,15 +60,15 @@ export default function ProjectCard({
           </CardTitle>
           <div className="mb-2 flex-grow">
             <p
-              className="text-sm text-muted-foreground text-justify hyphens-auto overflow-hidden"
+              className="text-sm text-muted-foreground text-justify hyphens-auto overflow-hidden relative"
               style={{
                 display: "-webkit-box",
                 WebkitLineClamp: 3,
                 WebkitBoxOrient: "vertical",
-                textOverflow: "ellipsis",
               }}
             >
               {project.description}
+              <span className="inline-block w-1/4 h-[calc(1em+4px)] absolute bottom-0 right-0 bg-gradient-to-r from-transparent to-card"></span>
             </p>
           </div>
           <motion.div

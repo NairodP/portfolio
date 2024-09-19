@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import profilePicture from "@/public/profilPicture.png";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import ContactMe from "@/components/ContactMe";
+import ContactMeButton from "@/components/ContactMeButton";
 import DownloadCV from "@/components/DownloadCV";
 import SkillsSection from "@/components/SkillsSection";
 import { useWindowSize } from "@/hooks/useWindowsSize";
@@ -75,7 +75,7 @@ export default function About() {
           </div>
           {!isLargeScreen && <SkillsSection isLargeScreen={isLargeScreen} tabAndBehindScreen={tabAndBehindScreen} ref={softSkillsRef} />}
           <div className="pt-3 grid gap-4 grid-cols-1 sm:grid-cols-2">
-            <ContactMe />
+            <ContactMeButton size="sm" fullWidth className="text-background" />
 
             <DownloadCV />
 

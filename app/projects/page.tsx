@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import BackHomeButton from "@/components/ui/BackHomeButton";
+import BackHomeButton from "@/components/BackHomeButton";
 import ProjectCard from "@/components/ProjectCard";
+import ContactMeButton from "@/components/ContactMeButton";
 import { projects } from "@/data/projects";
+import { MessageCircle } from "lucide-react";
 
 export default function Projects() {
   const [scrollLocked, setScrollLocked] = useState(false);
@@ -46,7 +48,22 @@ export default function Projects() {
           ))}
         </div>
 
-        <BackHomeButton />
+        <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <ContactMeButton 
+            variant="outline"
+            size="default"
+            className="flex items-center space-x-2"
+            icon={<MessageCircle className="h-4 w-4" />}
+            showMotionDiv={true}
+            containerClassName="mt-6"
+            animationProps={{
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              transition: { duration: 0.5, delay: 0.5 }
+            }}
+          />
+          <BackHomeButton />
+        </div>
       </motion.div>
     </div>
   );

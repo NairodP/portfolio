@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, Github } from "lucide-react";
 import CopyButton from "@/components/CopyButton";
-import BackHomeButton from "@/components/ui/BackHomeButton";
+import BackHomeButton from "@/components/BackHomeButton";
 import { motion } from "framer-motion";
 
 export default function Contact() {
@@ -40,7 +40,7 @@ export default function Contact() {
                 <Mail className="hidden sm:inline-block h-5 w-5 md:h-6 md:w-6 text-primary flex-shrink-0" />
                 <a
                   href={`mailto:${email}`}
-                  className="text-xs sm:text-sm md:text-base font-medium hover:underline hover:text-primary break-all"
+                  className="text-xs sm:text-sm md:text-base font-medium hover:text-primary break-all"
                 >
                   {email}
                 </a>
@@ -54,7 +54,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/dorian-pernot-513173185"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs sm:text-sm md:text-base font-medium hover:underline hover:text-primary"
+              className="text-xs sm:text-sm md:text-base font-medium hover:text-primary"
             >
               <Card className="hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-3 sm:p-4 md:p-6 ">
@@ -70,7 +70,7 @@ export default function Contact() {
               href="https://github.com/NairodP"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs sm:text-sm md:text-base font-medium hover:underline hover:text-primary"
+              className="text-xs sm:text-sm md:text-base font-medium hover:text-primary"
             >
               <Card className="hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-3 sm:p-4 md:p-6 ">
