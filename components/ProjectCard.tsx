@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,6 +19,8 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [truncatedText, setTruncatedText] = useState<string>(project.description);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
 
   const handleExpand = () => {
     setIsExpanded(true);
@@ -29,6 +31,31 @@ export default function ProjectCard({
     setIsExpanded(false);
     setScrollLocked(false);
   };
+
+  useEffect(() => {
+    const truncateText = () => {
+      const element = descriptionRef.current;
+      if (!element) return;
+
+      const words = project.description.split(' ');
+      let truncated = '';
+      let isTruncated = false;
+
+      element.innerHTML = project.description;
+      while (element.scrollHeight > element.clientHeight && words.length > 0) {
+        words.pop();
+        truncated = words.join(' ') + '...';
+        element.innerHTML = truncated;
+        isTruncated = true;
+      }
+
+      setTruncatedText(isTruncated ? truncated : project.description);
+    };
+
+    truncateText();
+    window.addEventListener('resize', truncateText);
+    return () => window.removeEventListener('resize', truncateText);
+  }, [project.description]);
 
   return (
     <motion.div
@@ -60,15 +87,11 @@ export default function ProjectCard({
           </CardTitle>
           <div className="mb-2 flex-grow">
             <p
-              className="text-sm text-muted-foreground text-justify hyphens-auto overflow-hidden relative"
-              style={{
-                display: "-webkit-box",
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: "vertical",
-              }}
+              ref={descriptionRef}
+              className="text-sm text-muted-foreground text-justify hyphens-auto overflow-hidden"
+              style={{ maxHeight: '4.5em', lineHeight: '1.5em' }}
             >
-              {project.description}
-              <span className="inline-block w-1/4 h-[calc(1em+4px)] absolute bottom-0 right-0 bg-gradient-to-r from-transparent to-card"></span>
+              {truncatedText}
             </p>
           </div>
           <motion.div
