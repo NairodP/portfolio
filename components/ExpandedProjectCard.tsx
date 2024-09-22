@@ -27,6 +27,9 @@ export default function ExpandedProjectCard({
   const { toast } = useToast();
   const [isMobile, setIsMobile] = useState(false);
 
+  console.log(isMobile);
+  
+
   useEffect(() => {
     setIsMobile(width ? width < 768 : false);
   }, [width]);
