@@ -4,8 +4,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { log } from "console";
 
 export default function BackHomeButton() {
+console.log("BackHomeButton");
   return (
     <motion.div
       className="mt-6 flex justify-center"
@@ -16,7 +18,7 @@ export default function BackHomeButton() {
       <Link href="/" passHref>
         <Button variant="outline" className="flex items-center space-x-2">
           <ArrowLeft className="h-4 w-4" />
-          <span>Retour à l&apos;accueil</span>
+          <span>Retour à l&apos;accueil</span>          
         </Button>
       </Link>
     </motion.div>
