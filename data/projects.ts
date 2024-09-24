@@ -12,6 +12,7 @@ import petitsPlatsImageCarousel5 from "@/public/petitsPlats-image/petitsPlats-im
 
 export const projects: Project[] = [
   {
+    id: 1,
     title: "App Météo",
     description:
       "Appel API pour afficher la météo partout en France. Cette application utilise l'API OpenWeatherMap pour fournir des informations météorologiques précises et à jour. Elle offre une interface utilisateur simple et responsive, permettant aux utilisateurs de rechercher facilement la météo de n'importe quelle ville en France grâce notamment à une barre de recherche intelligente.",
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     isResponsive : true,
   },
   {
+    id: 2,
     title: "Bibliothèque Modal",
     description:
       "Le but de ce projet était de convertir une bibliothèque JQuery de composant Modal en une bibliothèque React, avec TypeScript, pour ensuite la publier sur NPM. Cela permet de l'utiliser dans d'autres projets, notamment pour le projet 'Enregistrement RH' que vous pouvez voir à la suite de celui-ci.",
@@ -30,6 +32,7 @@ export const projects: Project[] = [
     isResponsive : true,
   },
   {
+    id: 3,
     title: "Enregistrement RH",
     description:
       "Création de formulaire d'authentification multi champs avec gestion des différentes types d'erreurs. Utilisation du package Modal depuis NPM, créé dans le projet 'Bibliothèque Modal', pour afficher un message de succès d'enrgistrement. Une page comprennant un tableau récapituatif des utilisateurs enregistrés est ensuite proposée avec un système de recherche.",
@@ -39,6 +42,7 @@ export const projects: Project[] = [
     isResponsive : true,
   },
   {
+    id: 4,
     title: "SportApp - App de données sportives",
     description:
       "Ici l'objectif était de créer un tableau d'analytics avec des données sportives, mockées (déjà disponibles en local) ou via un appel API. Le code permet les deux. À partir de ces données, des graphiques explicites sont implémentés pour permettre un suivi. Les graphiques sont réalisés avec la bibliothèque Recharts. (Application non responsive, disponible uniquement sur tablette et ordinateur).",
@@ -48,6 +52,7 @@ export const projects: Project[] = [
     isResponsive : false,
   },
   {
+    id: 5,
     title: "Petits Plats - recherches de recettes",
     description:
       "Dans cette très simple application réalisée uniquement en JavaScript, l'objectif était de pouvoir rechercher une recette dans une base de données (ici en local dans un fichier data) et de pouvoir afficher les informations de la recette. La recherche est possible via la barre de recherche proposant des suggestions, mais également grâce à 3 menus déroulants permettant un filtrage des données.",

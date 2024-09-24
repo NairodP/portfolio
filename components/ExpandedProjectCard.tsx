@@ -67,15 +67,15 @@ export default function ExpandedProjectCard({
         {!project.isHosted && project.carouselImages && (
           <Carousel className="w-full mb-4 relative">
             <CarouselContent>
-              {project.carouselImages.map((image, index) => (
-                <CarouselItem key={index}>
+              {project.carouselImages.map((image, id) => (
+                <CarouselItem key={id}>
                   <div
                     className="relative w-full"
                     style={{ height: "calc(100vh - 300px)" }}
                   >
                     <Image
                       src={image}
-                      alt={`${project.title} - Image ${index + 1}`}
+                      alt={`${project.title} - Image ${id + 1}`}
                       layout="fill"
                       objectFit="contain"
                       className="rounded-lg"
